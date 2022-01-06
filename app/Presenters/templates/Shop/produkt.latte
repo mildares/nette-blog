@@ -1,0 +1,16 @@
+{block navig}
+	<li n:if="$user->isloggedIn()"><a n:href="Shop:edit $produkt->id">Upravit produkt</a></li>
+{/block}
+
+{block content}
+ <img src="{$basePath}/{$produkt->upload}" height="100px">	
+    <h1 n:block="title">Detail Produktu : {$produkt->popisek}</h1>
+        <p>Objednávkové číslo: {$produkt->id}</p>
+        <p>Dostupnost:{$produkt->dostupnost}</p>
+        <p><strong>{$produkt->cena} Kč</strong></p>    
+        
+
+	
+
+	
+{/block}

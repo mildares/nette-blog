@@ -1,0 +1,19 @@
+{block navig}
+	<li n:if="$user->isloggedIn()"><a n:href="Shop:add">Přidat nový</a></li>
+{/block}
+
+{block content}
+	<h1 n:block="title">Produkty - seznam</h1>
+
+	<div n:foreach="$produkty as $pro" class="produkty">
+		
+            <img src="{$basePath}/{$pro->upload}" height="100px">
+            <h2><a n:href="Shop:produkt $pro->id">{$pro->popisek}</a></h2>
+            <div>Cena: {$pro->cena}</div>
+            <div>Dostupnost: {$pro->dostupnost}</div>
+            <hr><br>
+            
+	</div>
+
+	
+{/block}
